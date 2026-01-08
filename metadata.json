@@ -1,0 +1,9 @@
+{
+  "name": "SafePath PH",
+  "description": "A comprehensive student safety, attendance, and tracking application designed for the Philippines education system. Features offline-first NFC attendance, real-time GPS tracking with geofencing, and emergency SOS tools.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}

@@ -1,0 +1,114 @@
+{
+    "common": {
+        "appName": "SafePath PH",
+        "loading": "Naglo-load...",
+        "save": "I-save",
+        "cancel": "Kanselahin",
+        "edit": "I-edit",
+        "delete": "Burahin",
+        "confirm": "Kumpirmahin",
+        "back": "Bumalik",
+        "next": "Susunod",
+        "submit": "Ipasa",
+        "success": "Tagumpay",
+        "error": "May Mali",
+        "retry": "Ulitin",
+        "close": "Isara"
+    },
+    "auth": {
+        "login": "Mag-login",
+        "logout": "Mag-logout",
+        "register": "Mag-rehistro",
+        "forgotPassword": "Nakalimutan ang Password?",
+        "email": "Email",
+        "password": "Password",
+        "confirmPassword": "Kumpirmahin ang Password",
+        "fullName": "Buong Pangalan",
+        "username": "Username",
+        "parentLogin": "Login ng Magulang",
+        "studentLogin": "Login ng Estudyante",
+        "createAccount": "Gumawa ng Account",
+        "sendResetLink": "Magpadala ng Reset Link",
+        "verificationSent": "Naipadala na ang verification link! Tingnan ang iyong email.",
+        "resetLinkSent": "Naipadala na ang reset link! Tingnan ang iyong email."
+    },
+    "roles": {
+        "parent": "Magulang",
+        "student": "Estudyante",
+        "teacher": "Guro",
+        "guardian": "Tagapag-alaga"
+    },
+    "navigation": {
+        "home": "Home",
+        "history": "Kasaysayan",
+        "map": "Mapa",
+        "profile": "Profile",
+        "settings": "Settings"
+    },
+    "attendance": {
+        "title": "Attendance",
+        "present": "Narito",
+        "absent": "Wala",
+        "departed": "Umalis na",
+        "arrived": "Dumating",
+        "scanQR": "I-scan ang QR Code",
+        "timeIn": "Oras ng Pagpasok",
+        "timeOut": "Oras ng Pag-alis",
+        "recordedSuccessfully": "Matagumpay na Naitala ang Attendance",
+        "alreadyRecorded": "Naitala na",
+        "noHistory": "Wala pang attendance history",
+        "todaysAttendance": "Attendance Ngayon"
+    },
+    "notifications": {
+        "title": "Mga Notipikasyon",
+        "markAllRead": "Markahan lahat bilang nabasa",
+        "noNotifications": "Wala pang notipikasyon",
+        "attendanceAlert": "Alerto sa Attendance"
+    },
+    "settings": {
+        "title": "Settings",
+        "pushNotifications": "Push Notifications",
+        "whatsappAlerts": "WhatsApp Alerts",
+        "gpsHistory": "Detalyadong GPS History",
+        "darkMode": "Dark Mode",
+        "darkModeDesc": "Palitan ang light at dark na tema",
+        "language": "Wika",
+        "languageDesc": "Piliin ang iyong gustong wika"
+    },
+    "profile": {
+        "parentAccount": "Account ng Magulang",
+        "studentId": "ID"
+    },
+    "scanner": {
+        "title": "I-scan ang Attendance QR",
+        "instruction": "Itutok ang camera sa QR code",
+        "manualEntry": "Hindi ma-scan? Mag-enter ng code",
+        "hideManual": "Itago ang manual entry",
+        "enterCode": "Ilagay ang gate code (hal. main)",
+        "validCodes": "Valid na codes: main, east, west, north, south",
+        "cameraPermission": "Kailangan ng SafePath ang camera access para ma-scan ang attendance QR codes."
+    },
+    "linking": {
+        "linkStudent": "I-link ang Estudyante",
+        "enterCode": "Ilagay ang invite code",
+        "scanQR": "I-scan ang QR Code",
+        "uploadQR": "Mag-upload ng QR Image",
+        "invalidCode": "Invalid o expired na code",
+        "studentLinked": "Matagumpay na na-link ang estudyante"
+    },
+    "sos": {
+        "title": "Emergency SOS",
+        "holdToActivate": "Pindutin ng 3 segundo",
+        "activated": "Na-activate ang SOS",
+        "cancelled": "Kinansela ang SOS"
+    },
+    "errors": {
+        "invalidCredentials": "Mali ang email o password.",
+        "emailNotVerified": "Kailangan i-verify ang iyong email.",
+        "accountNotFound": "Hindi nahanap ang account.",
+        "networkError": "May problema sa network. Tingnan ang iyong koneksyon.",
+        "cameraPermissionDenied": "Hindi pinapayagan ang camera.",
+        "noCameraFound": "Walang camera sa device na ito.",
+        "somethingWentWrong": "May nangyaring mali. Subukan ulit."
+    }
+}

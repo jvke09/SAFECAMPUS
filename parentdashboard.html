@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Parent Portal</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Iconify (Lucide) -->
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+</head>
+<body class="text-slate-900 antialiased selection:bg-indigo-100 selection:text-indigo-700" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji','Segoe UI Emoji'; -webkit-tap-highlight-color: transparent; background-color: #f1f5f9;">
+  
+  <style>
+    *::-webkit-scrollbar { width: 0; height: 0; }
+    * { scrollbar-width: none; -ms-overflow-style: none; }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-enter { animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+    /* Shared Gradients */
+    .skin-nebula { background: linear-gradient(135deg, #4f46e5, #7c3aed, #db2777); }
+    .skin-emerald { background: linear-gradient(135deg, #059669, #10b981, #34d399); }
+    
+    /* Glass Effects */
+    .nav-glass { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .card-glass-dark { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    
+    .glow-shadow { box-shadow: 0 8px 20px -4px rgba(79, 70, 229, 0.4); }
+  </style>
+
+  <!-- Main Wrapper -->
+  <div class="max-w-md mx-auto min-h-screen flex flex-col relative bg-[#f8fafc] sm:shadow-xl sm:my-8 sm:rounded-[2rem] overflow-hidden">
+
+    <!-- Header -->
+    <header id="app-header" class="pt-6 pb-2 px-6 flex items-center justify-between z-30 sticky top-0 bg-[#f8fafc]/85 backdrop-blur-md transition-all duration-300 border-b border-transparent">
+      <div>
+        <p class="text-xs text-slate-500 font-medium tracking-wide uppercase">Parent Portal</p>
+        <h1 class="text-lg font-semibold tracking-tight text-slate-900">The Andersons</h1>
+      </div>
+      <button class="w-9 h-9 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 shadow-sm active:scale-95 transition-transform">
+        <iconify-icon icon="lucide:settings-2" width="18" height="18" style="stroke-width: 1.5;"></iconify-icon>
+      </button>
+    </header>
+
+    <!-- Dashboard Content -->
+    <main id="scroll-container" class="flex-1 overflow-y-auto pb-32 space-y-6">
+
+      <!-- 1. Child Selector / Status Cards (Horizontal Scroll) -->
+      <div class="mt-2 animate-enter" style="animation-delay: 0.05s;">
+        <div class="flex overflow-x-auto snap-x snap-mandatory px-6 gap-4 pb-4">
+          
+          <!-- Child 1: Alex (Active) -->
+          <div class="snap-center shrink-0 w-full relative group rounded-[1.5rem] overflow-hidden shadow-xl shadow-indigo-900/10 transition-transform active:scale-[0.98]">
+            <div class="absolute inset-0 skin-nebula"></div>
+            <div class="absolute inset-0 opacity-20 mix-blend-overlay" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22 opacity=%221%22/%3E%3C/svg%3E');"></div>
+            
+            <div class="relative p-5 text-white z-10 flex flex-col justify-between h-full min-h-[180px]">
+              <div class="flex justify-between items-start">
+                <div class="flex items-center gap-3">
+                  <div class="w-12 h-12 rounded-xl bg-slate-900/30 backdrop-blur-md border border-white/20 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" class="w-full h-full object-cover" alt="Child">
+                  </div>
+                  <div>
+                    <h2 class="text-lg font-semibold tracking-tight leading-tight">Alex</h2>
+                    <p class="text-[11px] text-white/80 font-medium">Grade 12 • Science</p>
+                  </div>
+                </div>
+                <div class="px-2.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 backdrop-blur-md flex items-center gap-1.5">
+                  <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+                  </span>
+                  <span class="text-[10px] font-semibold text-emerald-50 uppercase tracking-wide">In Campus</span>
+                </div>
+              </div>
+
+              <!-- Modified Stats -->
+              <div class="grid grid-cols-3 gap-2 mt-4">
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-2 border border-white/10 text-center">
+                  <p class="text-[10px] text-white/60 uppercase">Attendance</p>
+                  <p class="text-sm font-semibold">98%</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-2 border border-white/10 text-center">
+                  <p class="text-[10px] text-white/60 uppercase">Homework</p>
+                  <p class="text-sm font-semibold">3 Due</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-2 border border-white/10 text-center">
+                  <p class="text-[10px] text-white/60 uppercase">Merits</p>
+                  <p class="text-sm font-semibold">12 Pts</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Child 2: Sarah -->
+          <div class="snap-center shrink-0 w-[90%] relative group rounded-[1.5rem] overflow-hidden bg-white border border-slate-200 shadow-sm transition-transform active:scale-[0.98]">
+             <div class="relative p-5 z-10 flex flex-col justify-between h-full min-h-[180px]">
+              <div class="flex justify-between items-start">
+                <div class="flex items-center gap-3">
+                  <div class="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 overflow-hidden grayscale">
+                    <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?q=80&w=200&auto=format&fit=crop" class="w-full h-full object-cover" alt="Child">
+                  </div>
+                  <div>
+                    <h2 class="text-lg font-semibold tracking-tight leading-tight text-slate-900">Sarah</h2>
+                    <p class="text-[11px] text-slate-500 font-medium">Grade 8 • Arts</p>
+                  </div>
+                </div>
+                <div class="px-2.5 py-1 rounded-full bg-slate-100 border border-slate-200 flex items-center gap-1.5">
+                  <div class="w-2 h-2 rounded-full bg-slate-400"></div>
+                  <span class="text-[10px] font-semibold text-slate-500 uppercase tracking-wide">Absent</span>
+                </div>
+              </div>
+              
+              <div class="mt-auto">
+                 <button class="w-full py-2 rounded-lg bg-slate-50 text-slate-600 text-xs font-medium border border-slate-200 hover:bg-slate-100 transition-colors">Switch Profile</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        
+        <!-- Pagination Dots -->
+        <div class="flex justify-center gap-1.5 -mt-2">
+          <div class="w-1.5 h-1.5 rounded-full bg-indigo-500"></div>
+          <div class="w-1.5 h-1.5 rounded-full bg-slate-300"></div>
+        </div>
+      </div>
+
+      <!-- 2. Quick Actions Grid (Modified) -->
+      <div class="px-6 animate-enter" style="animation-delay: 0.1s;">
+        <h3 class="text-xs font-semibold text-slate-900 uppercase tracking-wide mb-3 pl-1">Quick Actions</h3>
+        <div class="grid grid-cols-4 gap-3">
+          <!-- Timetable (Replaces Pay Fees) -->
+          <button class="flex flex-col items-center gap-2 group">
+            <div class="w-14 h-14 rounded-2xl bg-white border border-slate-100 shadow-sm flex items-center justify-center text-indigo-600 group-active:scale-90 transition-transform hover:border-indigo-100 hover:shadow-md">
+              <iconify-icon icon="lucide:calendar-clock" width="24" height="24" style="stroke-width: 1.5;"></iconify-icon>
+            </div>
+            <span class="text-[10px] font-medium text-slate-600 text-center leading-tight">Class<br>Schedule</span>
+          </button>
+
+          <!-- Locate (Replaces Track Bus) -->
+          <button class="flex flex-col items-center gap-2 group">
+            <div class="w-14 h-14 rounded-2xl bg-white border border-slate-100 shadow-sm flex items-center justify-center text-emerald-600 group-active:scale-90 transition-transform hover:border-emerald-100 hover:shadow-md">
+              <iconify-icon icon="lucide:map-pin" width="24" height="24" style="stroke-width: 1.5;"></iconify-icon>
+            </div>
+            <span class="text-[10px] font-medium text-slate-600 text-center leading-tight">Locate<br>Student</span>
+          </button>
+
+          <button class="flex flex-col items-center gap-2 group">
+            <div class="w-14 h-14 rounded-2xl bg-white border border-slate-100 shadow-sm flex items-center justify-center text-rose-500 group-active:scale-90 transition-transform hover:border-rose-100 hover:shadow-md">
+              <iconify-icon icon="lucide:phone" width="24" height="24" style="stroke-width: 1.5;"></iconify-icon>
+            </div>
+            <span class="text-[10px] font-medium text-slate-600 text-center leading-tight">Contact<br>Teacher</span>
+          </button>
+
+          <button class="flex flex-col items-center gap-2 group">
+            <div class="w-14 h-14 rounded-2xl bg-white border border-slate-100 shadow-sm flex items-center justify-center text-amber-500 group-active:scale-90 transition-transform hover:border-amber-100 hover:shadow-md">
+              <iconify-icon icon="lucide:file-text" width="24" height="24" style="stroke-width: 1.5;"></iconify-icon>
+            </div>
+            <span class="text-[10px] font-medium text-slate-600 text-center leading-tight">Report<br>Card</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 3. Academic Notice Widget (Modified content) -->
+      <div class="px-6 animate-enter" style="animation-delay: 0.15s;">
+        <div class="bg-indigo-50 border border-indigo-100 rounded-2xl p-4 flex items-start gap-3">
+          <div class="p-2 bg-indigo-100 rounded-lg text-indigo-600 shrink-0">
+             <iconify-icon icon="lucide:award" width="20" height="20" style="stroke-width: 1.5;"></iconify-icon>
+          </div>
+          <div class="flex-1">
+            <h4 class="text-sm font-semibold text-indigo-900">Mid-Term Exams</h4>
+            <p class="text-xs text-indigo-700/80 mt-0.5 leading-relaxed">Exams for Science and Mathematics are scheduled for next week. Please review the study guide.</p>
+            <div class="mt-3 flex gap-3">
+              <button class="px-3 py-1.5 bg-indigo-600 text-white text-xs font-medium rounded-lg shadow-sm active:scale-95 transition-transform">View Syllabus</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Academic Progress Section (New) -->
+      <div class="px-6 animate-enter" style="animation-delay: 0.18s;">
+        <div class="flex items-center justify-between mb-3 pl-1">
+          <h3 class="text-xs font-semibold text-slate-900 uppercase tracking-wide">Current Curriculum</h3>
+          <button class="text-[10px] font-medium text-slate-500 hover:text-indigo-600">See All</button>
+        </div>
+
+        <div class="space-y-3">
+          <!-- Subject 1 -->
+          <div class="bg-white p-3 rounded-2xl border border-slate-100 shadow-sm flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-orange-50 text-orange-500 flex items-center justify-center border border-orange-100">
+              <iconify-icon icon="lucide:calculator" width="20" height="20" style="stroke-width: 1.5;"></iconify-icon>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex justify-between items-center mb-1">
+                <h4 class="text-sm font-medium text-slate-900">Mathematics</h4>
+                <span class="text-[10px] font-semibold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded-md border border-emerald-100">On Track</span>
+              </div>
+              <p class="text-xs text-slate-500 truncate">Chapter 4: Advanced Calculus</p>
+              <div class="mt-2 h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
+                <div class="h-full bg-orange-400 rounded-full" style="width: 75%"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Subject 2 -->
+          <div class="bg-white p-3 rounded-2xl border border-slate-100 shadow-sm flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-500 flex items-center justify-center border border-blue-100">
+              <iconify-icon icon="lucide:flask-conical" width="20" height="20" style="stroke-width: 1.5;"></iconify-icon>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex justify-between items-center mb-1">
+                <h4 class="text-sm font-medium text-slate-900">Physics</h4>
+                <span class="text-[10px] font-semibold text-amber-600 bg-amber-50 px-1.5 py-0.5 rounded-md border border-amber-100">Review</span>
+              </div>
+              <p class="text-xs text-slate-500 truncate">Unit 2: Thermodynamics</p>
+              <div class="mt-2 h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
+                <div class="h-full bg-blue-400 rounded-full" style="width: 45%"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Subject 3 -->
+          <div class="bg-white p-3 rounded-2xl border border-slate-100 shadow-sm flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-500 flex items-center justify-center border border-purple-100">
+              <iconify-icon icon="lucide:languages" width="20" height="20" style="stroke-width: 1.5;"></iconify-icon>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex justify-between items-center mb-1">
+                <h4 class="text-sm font-medium text-slate-900">English Lit</h4>
+                <span class="text-[10px] font-semibold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded-md border border-emerald-100">Excel</span>
+              </div>
+              <p class="text-xs text-slate-500 truncate">Essay: Shakespeare's Hamlet</p>
+              <div class="mt-2 h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
+                <div class="h-full bg-purple-400 rounded-full" style="width: 90%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Live Activity Feed (Modified) -->
+      <div class="px-6 animate-enter" style="animation-delay: 0.2s;">
+        <div class="flex items-center justify-between mb-3 pl-1">
+          <h3 class="text-xs font-semibold text-slate-900 uppercase tracking-wide">Recent Activity</h3>
+          <button class="text-[10px] font-medium text-indigo-600 hover:text-indigo-700">View All</button>
+        </div>
+        
+        <div class="bg-white rounded-2xl p-1 shadow-sm border border-slate-100">
+          
+          <!-- Item 1 -->
+          <div class="group flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors cursor-pointer border-b border-slate-50 last:border-0">
+            <div class="relative mt-1">
+               <div class="w-8 h-8 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center border border-emerald-100 z-10 relative">
+                 <iconify-icon icon="lucide:log-in" width="14" height="14" style="stroke-width: 1.5;"></iconify-icon>
+               </div>
+               <div class="absolute top-8 left-1/2 -ml-[1px] w-[2px] h-full bg-slate-100 group-last:hidden"></div>
+            </div>
+            <div class="flex-1">
+              <div class="flex justify-between items-start">
+                <h4 class="text-sm font-medium text-slate-900">Entered Campus</h4>
+                <span class="text-[10px] text-slate-400">07:45 AM</span>
+              </div>
+              <p class="text-xs text-slate-500 mt-0.5">Alex scanned ID at Main Gate.</p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="group flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors cursor-pointer border-b border-slate-50 last:border-0">
+            <div class="relative mt-1">
+               <div class="w-8 h-8 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center border border-indigo-100 z-10 relative">
+                 <iconify-icon icon="lucide:book-open" width="14" height="14" style="stroke-width: 1.5;"></iconify-icon>
+               </div>
+               <div class="absolute top-8 left-1/2 -ml-[1px] w-[2px] h-full bg-slate-100 group-last:hidden"></div>
+            </div>
+            <div class="flex-1">
+              <div class="flex justify-between items-start">
+                <h4 class="text-sm font-medium text-slate-900">Physics Homework Assigned</h4>
+                <span class="text-[10px] text-slate-400">Yesterday</span>
+              </div>
+              <p class="text-xs text-slate-500 mt-0.5">Chapter 4: Thermodynamics. Due Mon.</p>
+            </div>
+          </div>
+
+          <!-- Item 3 (Replaced Purchase) -->
+          <div class="group flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors cursor-pointer">
+            <div class="relative mt-1">
+               <div class="w-8 h-8 rounded-full bg-sky-50 text-sky-500 flex items-center justify-center border border-sky-100 z-10 relative">
+                 <iconify-icon icon="lucide:library" width="14" height="14" style="stroke-width: 1.5;"></iconify-icon>
+               </div>
+            </div>
+            <div class="flex-1">
+              <div class="flex justify-between items-start">
+                <h4 class="text-sm font-medium text-slate-900">Book Returned</h4>
+                <span class="text-[10px] text-slate-400">Yesterday</span>
+              </div>
+              <p class="text-xs text-slate-500 mt-0.5">Returned '1984' to School Library.</p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Bottom Navigation Bar (Modified) -->
+    <nav class="absolute bottom-0 w-full z-40 nav-glass border-t border-slate-200/60 pb-8 pt-2 px-6">
+      <div class="flex justify-between items-end relative">
+        <button class="flex-1 flex flex-col items-center gap-1 group pb-2">
+          <div class="p-1.5 rounded-xl bg-indigo-50 text-indigo-600 transition-colors">
+            <iconify-icon icon="lucide:layout-grid" width="20" height="20" style="stroke-width: 1.5;"></iconify-icon>
+          </div>
+          <span class="text-[10px] font-medium text-indigo-600">Overview</span>
+        </button>
+
+        <button class="flex-1 flex flex-col items-center gap-1 group pb-2 text-slate-400 hover:text-slate-600 transition-colors">
+          <div class="p-1.5 rounded-xl group-active:bg-slate-100">
+            <iconify-icon icon="lucide:graduation-cap" width="20" height="20" style="stroke-width: 1.5;"></iconify-icon>
+          </div>
+          <span class="text-[10px] font-medium">Academics</span>
+        </button>
+
+        <div class="flex-1 flex justify-center relative -top-6">
+          <button class="w-16 h-16 rounded-full bg-slate-900 text-white flex items-center justify-center glow-shadow transform active:scale-95 transition-all border-4 border-[#f8fafc]">
+            <iconify-icon icon="lucide:plus" width="28" height="28" style="stroke-width: 1.5;"></iconify-icon>
+          </button>
+        </div>
+
+        <!-- Messages Changed to Alerts -->
+        <button class="flex-1 flex flex-col items-center gap-1 group pb-2 text-slate-400 hover:text-slate-600 transition-colors">
+          <div class="p-1.5 rounded-xl group-active:bg-slate-100 relative">
+            <iconify-icon icon="lucide:bell" width="20" height="20" style="stroke-width: 1.5;"></iconify-icon>
+            <span class="absolute top-1 right-1.5 w-2 h-2 bg-rose-500 rounded-full border border-white"></span>
+          </div>
+          <span class="text-[10px] font-medium">Alerts</span>
+        </button>
+
+        <button class="flex-1 flex flex-col items-center gap-1 group pb-2 text-slate-400 hover:text-slate-600 transition-colors">
+          <div class="p-1.5 rounded-xl group-active:bg-slate-100">
+            <iconify-icon icon="lucide:menu" width="20" height="20" style="stroke-width: 1.5;"></iconify-icon>
+          </div>
+          <span class="text-[10px] font-medium">Menu</span>
+        </button>
+      </div>
+    </nav>
+  </div>
+
+  <script>
+    // Scroll Logic for Header Shadow
+    const scrollContainer = document.getElementById('scroll-container');
+    const header = document.getElementById('app-header');
+
+    function updateHeaderShadow() {
+      const y = scrollContainer ? scrollContainer.scrollTop : (window.scrollY || 0);
+      if (y > 10) {
+        header.classList.add('shadow-sm', 'border-slate-200');
+        header.classList.remove('border-transparent');
+      } else {
+        header.classList.remove('shadow-sm', 'border-slate-200');
+        header.classList.add('border-transparent');
+      }
+    }
+
+    if (scrollContainer) {
+      scrollContainer.addEventListener('scroll', updateHeaderShadow, { passive: true });
+    }
+    window.addEventListener('scroll', updateHeaderShadow, { passive: true });
+    document.addEventListener('DOMContentLoaded', updateHeaderShadow);
+    updateHeaderShadow();
+  </script>
+</body>
+</html>

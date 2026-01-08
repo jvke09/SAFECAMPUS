@@ -1,0 +1,114 @@
+{
+    "common": {
+        "appName": "SafeCampus APP",
+        "loading": "Loading...",
+        "save": "Save",
+        "cancel": "Cancel",
+        "edit": "Edit",
+        "delete": "Delete",
+        "confirm": "Confirm",
+        "back": "Back",
+        "next": "Next",
+        "submit": "Submit",
+        "success": "Success",
+        "error": "Error",
+        "retry": "Retry",
+        "close": "Close"
+    },
+    "auth": {
+        "login": "Login",
+        "logout": "Log Out",
+        "register": "Register",
+        "forgotPassword": "Forgot Password?",
+        "email": "Email",
+        "password": "Password",
+        "confirmPassword": "Confirm Password",
+        "fullName": "Full Name",
+        "username": "Username",
+        "parentLogin": "Parent Login",
+        "studentLogin": "Student Login",
+        "createAccount": "Create Account",
+        "sendResetLink": "Send Reset Link",
+        "verificationSent": "Verification link sent! Check your email.",
+        "resetLinkSent": "Reset link sent! Check your email."
+    },
+    "roles": {
+        "parent": "Parent",
+        "student": "Student",
+        "teacher": "Teacher",
+        "guardian": "Guardian"
+    },
+    "navigation": {
+        "home": "Home",
+        "history": "History",
+        "map": "Map",
+        "profile": "Profile",
+        "settings": "Settings"
+    },
+    "attendance": {
+        "title": "Attendance",
+        "present": "Present",
+        "absent": "Absent",
+        "departed": "Departed",
+        "arrived": "Arrived",
+        "scanQR": "Scan QR Code",
+        "timeIn": "Time In",
+        "timeOut": "Time Out",
+        "recordedSuccessfully": "Attendance Recorded Successfully",
+        "alreadyRecorded": "Already recorded",
+        "noHistory": "No attendance history yet",
+        "todaysAttendance": "Today's Attendance"
+    },
+    "notifications": {
+        "title": "Notifications",
+        "markAllRead": "Mark all read",
+        "noNotifications": "No notifications yet",
+        "attendanceAlert": "Attendance Alert"
+    },
+    "settings": {
+        "title": "Settings",
+        "pushNotifications": "Push Notifications",
+        "whatsappAlerts": "WhatsApp Alerts",
+        "gpsHistory": "Detailed GPS History",
+        "darkMode": "Dark Mode",
+        "darkModeDesc": "Toggle between light and dark themes",
+        "language": "Language",
+        "languageDesc": "Choose your preferred language"
+    },
+    "profile": {
+        "parentAccount": "Parent account",
+        "studentId": "ID"
+    },
+    "scanner": {
+        "title": "Scan Attendance QR",
+        "instruction": "Point your camera at the QR code",
+        "manualEntry": "Can't scan? Enter code manually",
+        "hideManual": "Hide manual entry",
+        "enterCode": "Enter gate code (e.g., main)",
+        "validCodes": "Valid codes: main, east, west, north, south",
+        "cameraPermission": "SafeCampus APP requires camera access to scan attendance QR codes."
+    },
+    "linking": {
+        "linkStudent": "Link Student",
+        "enterCode": "Enter invite code",
+        "scanQR": "Scan QR Code",
+        "uploadQR": "Upload QR Image",
+        "invalidCode": "Invalid or expired code",
+        "studentLinked": "Student linked successfully"
+    },
+    "sos": {
+        "title": "Emergency SOS",
+        "holdToActivate": "Hold for 3 seconds",
+        "activated": "SOS Activated",
+        "cancelled": "SOS Cancelled"
+    },
+    "errors": {
+        "invalidCredentials": "Invalid email or password.",
+        "emailNotVerified": "Please verify your email.",
+        "accountNotFound": "Account not found.",
+        "networkError": "Network error. Check your connection.",
+        "cameraPermissionDenied": "Camera permission denied.",
+        "noCameraFound": "No camera found on this device.",
+        "somethingWentWrong": "Something went wrong. Please try again."
+    }
+}
