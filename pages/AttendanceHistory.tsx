@@ -86,8 +86,8 @@ export const AttendanceHistory: React.FC<AttendanceHistoryProps> = ({ user, isOn
 					<div
 						key={i}
 						className={`flex flex-col items-center gap-2 min-w-[70px] p-2 rounded-xl border transition-colors ${d.active
-								? 'bg-blue-600 text-white shadow-lg shadow-blue-500/30 border-blue-600'
-								: 'bg-white dark:bg-slate-800 border-slate-100 dark:border-slate-700 text-slate-400 dark:text-slate-500'
+							? 'bg-blue-600 text-white shadow-lg shadow-blue-500/30 border-blue-600'
+							: 'bg-white dark:bg-slate-800 border-slate-100 dark:border-slate-700 text-slate-400 dark:text-slate-500'
 							}`}
 					>
 						<span className="text-xs font-medium">{d.day}</span>
@@ -122,7 +122,7 @@ export const AttendanceHistory: React.FC<AttendanceHistoryProps> = ({ user, isOn
 								</div>
 								<div>
 									<h4 className="text-sm font-bold text-slate-900 dark:text-white">{item.type === 'LOGIN' ? 'Time In' : 'Time Out'}</h4>
-									<p className="text-xs text-slate-500 dark:text-slate-400">Manila Science HS</p>
+									<p className="text-xs text-slate-500 dark:text-slate-400">Northridge Academy</p>
 								</div>
 								<div className="ml-auto bg-slate-50 dark:bg-slate-900 px-3 py-1 rounded-lg border border-slate-100 dark:border-slate-800">
 									<p className="text-xs font-bold text-slate-700 dark:text-slate-300">

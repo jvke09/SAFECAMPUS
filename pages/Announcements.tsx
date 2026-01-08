@@ -72,8 +72,8 @@ export const Announcements: React.FC = () => {
     <div className="min-h-full bg-slate-50 pb-20">
       {/* Header */}
       <div className="bg-white sticky top-0 z-30 px-6 py-4 shadow-sm flex items-center gap-4">
-        <button 
-          onClick={() => navigate(-1)} 
+        <button
+          onClick={() => navigate(-1)}
           className="p-2 -ml-2 hover:bg-slate-100 rounded-full transition-colors"
         >
           <ArrowLeft size={20} className="text-slate-600" />
@@ -99,7 +99,7 @@ export const Announcements: React.FC = () => {
             </div>
             <div>
               <p className="text-xs font-medium text-indigo-100 uppercase tracking-wider">Verified Source</p>
-              <p className="font-bold">Manila Science High School</p>
+              <p className="font-bold">Northridge Academy</p>
             </div>
           </div>
           <ShieldAlert size={24} className="text-white/80" />
@@ -108,10 +108,10 @@ export const Announcements: React.FC = () => {
         {/* Alerts Feed */}
         <div className="space-y-4">
           <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider px-1">Recent Broadcasts</h2>
-          
+
           {alerts.map((alert) => (
-            <div 
-              key={alert.id} 
+            <div
+              key={alert.id}
               className={`p-5 rounded-2xl shadow-sm ${getAlertStyle(alert.type)} transition-all duration-300 hover:shadow-md hover:scale-[1.02]`}
             >
               <div className="flex justify-between items-start mb-3">
@@ -120,11 +120,10 @@ export const Announcements: React.FC = () => {
                     {getIcon(alert.type)}
                   </div>
                   <div>
-                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide border ${
-                      alert.type === 'EMERGENCY' ? 'bg-red-100 text-red-700 border-red-200' :
-                      alert.type === 'SUSPENSION' ? 'bg-amber-100 text-amber-700 border-amber-200' :
-                      'bg-blue-100 text-blue-700 border-blue-200'
-                    }`}>
+                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide border ${alert.type === 'EMERGENCY' ? 'bg-red-100 text-red-700 border-red-200' :
+                        alert.type === 'SUSPENSION' ? 'bg-amber-100 text-amber-700 border-amber-200' :
+                          'bg-blue-100 text-blue-700 border-blue-200'
+                      }`}>
                       {alert.type}
                     </span>
                   </div>
